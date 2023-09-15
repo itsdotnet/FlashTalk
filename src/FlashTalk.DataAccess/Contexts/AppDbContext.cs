@@ -1,24 +1,24 @@
 ﻿using FlashTalk.DataAccess.Constans;
+using Npgsql;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace FlashTalk.DataAccess;
 
 public class AppDbContext : IDisposable
 {
     private readonly string _connectionString;
-    private SqlConnection _connection;
+    private NpgsqlConnection _connection;
 
     public AppDbContext()
     {
         _connectionString = DbConstans.CONNECTION;
     }
 
-    private SqlConnection OpenConnection()
+    public NpgsqlConnection OpenConnection()
     {
         if (_connection == null)
         {
-            _connection = new SqlConnection(_connectionString);
+            _connection = new NpgsqlConnection(_connectionString);
             _connection.Open();
         }
         else if (_connection.State == ConnectionState.Closed)

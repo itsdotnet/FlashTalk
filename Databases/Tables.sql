@@ -6,7 +6,7 @@ CREATE TABLE "User" (
     "Password" varchar(255) NOT NULL,
     "IsDeleted" boolean DEFAULT false,
     "CreatedAt" timestamp NOT NULL,
-    "UpdatedAt" timestamp NOT NULL
+    "UpdatedAt" timestamp DEFAULT NULL
 );
 
 -- Create the Message table
@@ -17,7 +17,7 @@ CREATE TABLE "Message" (
     "Text" text NOT NULL,
     "IsDeleted" boolean DEFAULT false,
     "CreatedAt" timestamp NOT NULL,
-    "UpdatedAt" timestamp NOT NULL,
+    "UpdatedAt" timestamp DEFAULT NULL,
     FOREIGN KEY ("From") REFERENCES "User" ("Id"),
     FOREIGN KEY ("To") REFERENCES "User" ("Id")
 );
