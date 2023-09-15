@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using FlashTalk.DataAccess.Constans;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace FlashTalk.DataAccess;
@@ -10,7 +11,7 @@ public class AppDbContext : IDisposable
 
     public AppDbContext()
     {
-        _connectionString = connectionString;
+        _connectionString = DbConstans.CONNECTION;
     }
 
     private SqlConnection OpenConnection()
