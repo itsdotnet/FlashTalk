@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashTalk.Web", "FlashTalk.Web\FlashTalk.Web.csproj", "{65B82C6D-C41F-4330-BF09-DA9354B04375}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{79F7BEC6-0512-4206-B9C6-CE4E1A892633}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashTalk.Web", "src\FlashTalk.Web\FlashTalk.Web.csproj", "{BCF62F0A-7F15-4FCC-B86C-D42FA6615254}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashTalk.Service", "src\FlashTalk.Service\FlashTalk.Service.csproj", "{A49B9E85-80F4-4991-B109-B1611852954F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashTalk.Domain", "src\FlashTalk.Domain\FlashTalk.Domain.csproj", "{4F8427DD-4B53-4D35-A28B-71EC17C73974}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashTalk.DataAccess", "src\FlashTalk.DataAccess\FlashTalk.DataAccess.csproj", "{4A2694AE-125C-4395-B6F9-AF792081C3DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +19,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{65B82C6D-C41F-4330-BF09-DA9354B04375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65B82C6D-C41F-4330-BF09-DA9354B04375}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65B82C6D-C41F-4330-BF09-DA9354B04375}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65B82C6D-C41F-4330-BF09-DA9354B04375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF62F0A-7F15-4FCC-B86C-D42FA6615254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF62F0A-7F15-4FCC-B86C-D42FA6615254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF62F0A-7F15-4FCC-B86C-D42FA6615254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF62F0A-7F15-4FCC-B86C-D42FA6615254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A49B9E85-80F4-4991-B109-B1611852954F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A49B9E85-80F4-4991-B109-B1611852954F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A49B9E85-80F4-4991-B109-B1611852954F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A49B9E85-80F4-4991-B109-B1611852954F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F8427DD-4B53-4D35-A28B-71EC17C73974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F8427DD-4B53-4D35-A28B-71EC17C73974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F8427DD-4B53-4D35-A28B-71EC17C73974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F8427DD-4B53-4D35-A28B-71EC17C73974}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A2694AE-125C-4395-B6F9-AF792081C3DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A2694AE-125C-4395-B6F9-AF792081C3DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A2694AE-125C-4395-B6F9-AF792081C3DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A2694AE-125C-4395-B6F9-AF792081C3DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BCF62F0A-7F15-4FCC-B86C-D42FA6615254} = {79F7BEC6-0512-4206-B9C6-CE4E1A892633}
+		{A49B9E85-80F4-4991-B109-B1611852954F} = {79F7BEC6-0512-4206-B9C6-CE4E1A892633}
+		{4F8427DD-4B53-4D35-A28B-71EC17C73974} = {79F7BEC6-0512-4206-B9C6-CE4E1A892633}
+		{4A2694AE-125C-4395-B6F9-AF792081C3DD} = {79F7BEC6-0512-4206-B9C6-CE4E1A892633}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1397EC78-D88E-44C0-8398-61B0EE1108F2}
