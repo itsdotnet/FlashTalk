@@ -17,13 +17,12 @@ public class UserRepository : IUserRepository
     {
         using (NpgsqlConnection connection = _appDbContext.OpenConnection())
         {
-            await using var command = new NpgsqlCommand("INSERT INTO \"Users\" (Name, Username, Password, IsDeleted, CreatedAt, UpdatedAt) VALUES (@Name, @Username, @Password, @IsDeleted, @CreatedAt, @UpdatedAt)", connection);
+            await using var command = new NpgsqlCommand("INSERT INTO \"Users\" (Name, Username, Password, IsDeleted, CreatedAt) VALUES (@Name, @Username, @Password, @IsDeleted, @CreatedAt)", connection);
             command.Parameters.AddWithValue("@Name", user.Name);
             command.Parameters.AddWithValue("@Username", user.Username);
             command.Parameters.AddWithValue("@Password", user.Password);
             command.Parameters.AddWithValue("@IsDeleted", false);
             command.Parameters.AddWithValue("@CreatedAt", DateTime.UtcNow);
-            command.Parameters.AddWithValue("@UpdatedAt", null);
 
             int rowsAffected = await command.ExecuteNonQueryAsync();
 
