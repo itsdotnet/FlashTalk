@@ -2,7 +2,7 @@
 
 namespace FlashTalk.Domain.Entities;
 
-public class Massage : Auditable
+public class Message : Auditable
 {
     public long From { get; set; }
     public long To { get; set; }
