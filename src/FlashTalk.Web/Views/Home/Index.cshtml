@@ -1,8 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Haha Its me";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body>
+    <video id="videoPlayer" controls autoplay></video>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/signalr/3.1.12/signalr.min.js"></script>
+    <script>
+        const videoPlayer = document.getElementById('videoPlayer');
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl('/videoHub')
+            .build();
+        
+        connection.on('ReceiveVideoStream', (streamData) => {
+            // Update the video player with the received video stream data
+            videoPlayer.srcObject = streamData;
+        });
+        
+        connection.start()
+            .then(() => {
+                console.log('Connection established.');
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    </script>
+</body>

@@ -1,3 +1,7 @@
+using FlashTalk.Web.Hubs;
+using FlashTalk.Web.Interfaces;
+using Microsoft.AspNetCore.SignalR;
+
 namespace FlashTalk.Web
 {
     public class Program
@@ -23,7 +27,12 @@ namespace FlashTalk.Web
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.MapHub<ChatHub>("chat-hub");
+            app.MapPost("broadcast", async (string message, IHubContext<ChatHub, IChatClient> context) =>
+            {
+                await context.Clients.All.ReceiveMessage(message);
+                return Results.NoContent();
+            });
             app.UseAuthorization();
 
             app.MapControllerRoute(
